@@ -1,0 +1,37 @@
+<!Doctype HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Display null text</title>
+
+	<!-- Ignite UI Required Combined CSS Files -->
+	<link href="http://cdn-na.infragistics.com/jquery/20141/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+	<link href="http://cdn-na.infragistics.com/jquery/20141/latest/css/structure/infragistics.css" rel="stylesheet" />    
+	
+	<script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+	
+	<!-- Ignite UI Required Combined JavaScript Files -->
+	<script src="http://cdn-na.infragistics.com/jquery/20141/latest/js/infragistics.core.js"></script>
+	<script src="http://cdn-na.infragistics.com/jquery/20141/latest/js/infragistics.lob.js"></script>
+	<script src="http://cdn-na.infragistics.com/jquery/20141/latest/js/infragistics.dv.js"></script>
+</head>
+<body>
+	<select id="combo">
+		<option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="mercedes">Mercedes</option>
+		<option value="audi">Audi</option>
+	</select>
+
+	<script type="text/javascript">
+		$(function() {
+			$('#combo').igCombo({
+				nullText: 'Select option',
+				selectedItems: [{}]
+			});
+		});
+	</script>
+</body>
+</html>

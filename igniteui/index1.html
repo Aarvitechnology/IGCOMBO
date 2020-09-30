@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+
+    <!-- Ignite UI for jQuery Required Combined CSS Files -->
+    <link href="http://cdn-na.infragistics.com/igniteui/2020.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+    <link href="http://cdn-na.infragistics.com/igniteui/2020.1/latest/css/structure/infragistics.css" rel="stylesheet" />
+
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI for jQuery Required Combined JavaScript Files -->
+    <script src="http://cdn-na.infragistics.com/igniteui/2020.1/latest/js/infragistics.core.js"></script>
+    <script src="http://cdn-na.infragistics.com/igniteui/2020.1/latest/js/infragistics.lob.js"></script>
+
+</head>
+
+<body>
+    <style>
+        .combo-label {
+            margin-bottom: .5em;
+        }
+    </style>
+    <h3>Select Infragistics products by using:</h3>
+    <br />
+    <div class=".ui-widget-overlay"></div>
+    <h4 class="combo-label">- Single Selection, opens drop down on focus</h4>
+    <div id="singleSelectCombo"></div>
+
+    <h4 class="combo-label">- Multiple Selection</h4>
+    <div id="multiSelectCombo"></div>
+
+    <h4 class="combo-label">- Multiple Selection with Checkboxes</h4>
+    <div id="checkboxSelectCombo"></div>
+
+    <h4 class="combo-label">- Multiple Selection with Checkboxes Select Tag</h4>
+    <select class="form-control select_option select_combobox" multiple id="Manufacturer_select_combobox" name="select">
+        <!-- <option value="" disabled selected>Manufacturer</option> -->
+        <!-- <option value="1">Manufacturer</option> -->
+        <option value="1">Audi</option>
+        <option value="2">BMW</option>
+        <option value="3">Jeep</option>
+        <option value="4">SUZUKI</option>
+        <option value="5">Mazda</option>
+        <option value="6">Ford</option>
+        <option value="7">MIni</option>
+        <option value="8">Honda</option>
+      </select>
+
+    <script>
+        var colors = [{
+            Name: "jQuery/HTML5/ASP.NET MVC Controls"
+        }, {
+            Name: "ASP.NET Controls"
+        }, {
+            Name: "Windows Forms Controls"
+        }, {
+            Name: "WPF Controls"
+        }, {
+            Name: "Android Native mobile controls"
+        }, {
+            Name: "iOS Controls"
+        }, {
+            Name: "SharePlus"
+        }, {
+            Name: "ReportPlus"
+        }, {
+            Name: "Indigo Studio"
+        }];
+
+        $(function() {
+
+            $("#singleSelectCombo").igCombo({
+                width: 300,
+                dataSource: colors,
+                textKey: "Name",
+                valueKey: "Name",
+                dropDownOnFocus: true,
+                dropDownOrientation: "bottom"
+            });
+
+            $("#multiSelectCombo").igCombo({
+                width: 300,
+                dataSource: colors,
+                textKey: "Name",
+                valueKey: "Name",
+                multiSelection: {
+                    enabled: true
+                },
+                dropDownOrientation: "bottom"
+            });
+
+            $("#checkboxSelectCombo").igCombo({
+                width: 300,
+                dataSource: colors,
+                textKey: "Name",
+                valueKey: "Name",
+                multiSelection: {
+                    enabled: true,
+                    showCheckboxes: true
+                },
+                dropDownOrientation: "bottom"
+            });
+
+            $("#Manufacturer_select_combobox").igCombo({
+                width: 300,
+                nullText: 'Select option',
+                selectedItems: [{}],
+                placeHolder: "Empty input field",
+                multiSelection: {
+                    enabled: true,
+                    showCheckboxes: true
+                },
+                dropDownOrientation: "bottom"
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
